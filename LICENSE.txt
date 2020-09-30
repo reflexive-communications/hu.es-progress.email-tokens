@@ -1,5 +1,5 @@
-Package: hu.elelmiszerbank.email-token
-Copyright (C) 2019, Sandor Semsey <semseysandor@gmail.com>
+Package: hu.es-progress.email-token
+Copyright (C) 2019, Sandor Semsey <sandor@es-progress.hu>
 Licensed under the GNU Affero Public License 3.0 (below).
 
 -------------------------------------------------------------------------------

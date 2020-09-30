@@ -193,7 +193,7 @@ function email_token_civicrm_themes(&$themes)
 function email_token_civicrm_tokens(&$tokens)
 {
     $tokens['email'] = [
-    'email.greeting' => 'Hungarian Greeting',
+        'email.greeting' => 'Hungarian Greeting',
     ];
 }
 
@@ -239,9 +239,9 @@ function email_token_isTokenRequested($tokens, $group, $token)
     // "Send an email" sets $tokens to the format:
     //  [ 'group' => [ 0 => 'token_name' ] ]
     if (array_key_exists($token, $tokens[$group]) || in_array(
-        $token,
-        $tokens[$group]
-    )) {
+            $token,
+            $tokens[$group]
+        )) {
         return true;
     }
 
@@ -262,15 +262,15 @@ function email_token_greeting(&$values, $cids)
     foreach ($cids as $cid) {
         // Retrieve contact data
         $contacts = Contact::get()
-        ->setSelect(
-            [
-            'first_name',
-            'last_name',
-            ]
-        )
-        ->addWhere('id', '=', $cid)
-        ->setLimit(1)
-        ->execute();
+            ->setSelect(
+                [
+                    'first_name',
+                    'last_name',
+                ]
+            )
+            ->addWhere('id', '=', $cid)
+            ->setLimit(1)
+            ->execute();
 
         // Query error checking
         if (empty($contacts) || $contacts->count() != 1) {
